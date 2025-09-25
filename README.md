@@ -45,14 +45,16 @@ sudo apt install -y build-essential openmpi-bin libopenmpi-dev
 ```
 
 ### 2. Verify Installation
+```bash
 mpicc --version
-
+```
 
 ## ▶️ How to Run
 ### Step 1: Generate Random Matrices
+```bash
 mpicc writing.c -o writing
 ./writing
-
+```
 
 This creates:
 
@@ -61,9 +63,10 @@ MatrixA.txt
 MatrixB.txt
 
 ### Step 2: Run Parallel Matrix Multiplication
+```bash
 mpicc project.c -o project -lm
 mpirun -np 4 ./project
-
+```
 
 -np 4 means run with 4 processes (1 master + 3 workers).
 
